@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+  <body>
+    <div id="component-exercise">TODAY's EXERCISE</div>
+    <div w3-include-html="/components/themed-list/non-negotiables.html"></div>
+    <div id="calendar"></div>
+    <div id="container" style="display: block; width:200; height:200px;">
+      <div id="workouts"></div>
+    <canvas id="myChart"></canvas>
+    <div> ToDos </div>
+
+    <p class="sexy-list">
+      <br/>1. Write Libraries for utilities for self (javascript)
+      <br/>2. Build upon html elements/ call them for self
+      <br/>3. Have Certain elems appear or unfolded based on time of day/ which day!
+        (example - breakfast!)
+        (Give example breakfasts based on calorie / zero carb days!)
+      <br/>4. No breakfast tomorrow -- until weights! -> gonna be simple
+        <br/>  Avocado
+        <br/>  4 Eggs
+        <br/>  Greek Yogurt!
+
+      <br/>5. TODO:  Throwout Thursdays (Open Mic!)
+      <br/>@5am - 9am
+        <br/>A. Order Tix (0.5)
+        <br/>B. Workout (1h)
+        <br/>C. Simple Breakfast (See Above) + w/ Chicken (0.5)
+        <br/>D. 2h (Work of Choice: - Open Mic?) & Networking
+      <br/>6. Immediate Ritual ( No think!)
+      <br> 7. Access to MD files in big folder fashion
+    </p>
+  </div>
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="generate-list.js"></script>
+<script>
+// BIG WARNING -> GENERATE-LIST
+// GENERATES A VARIABLE "foodVALUES"
+// That this script uses!""
+// ************************
+var date = new Date();
+document.getElementById("calendar").innerHTML = daysOfWeek[date.getDay()];
+var ctx = document.getElementById("myChart");
+console.log(ctx);
+// ctx.canvas.width = 300;
+// ctx.canvas.height = 300;
+var datasets = [{
+    label: '# of Votes',
+    data: foodValues,
+    // [12, 19, 3],
+    backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+    ],
+    borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+    ],
+    borderWidth: 1
+}];
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+        "Protein" + "("+foodValues[0]+")",
+         "Carb" +"("+foodValues[1]+")",
+        "Fat" + "("+foodValues[2]+")"
+        ],
+        datasets: datasets
+    },
+    options: {
+      responsive: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    fontSize: 40
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    fontSize: 40
+                }
+            }]
+        }
+    }
+});
+console.log("Data: ");
+// datasets.data.forEach(function (dataset) {
+//        dataset.points.forEach(function (points) {
+//            ctx.fillText(points.value, points.x, points.y - 10);
+//          });
+//        });
+</script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js">
+    </script>
+    <script src="config/listConfig.js"></script> <!-- Load CONFIG -->
+    <script src="include-html-plugin.js"></script>
+    <script src="library/list-gen.js"></script>
+    <script src="script.js"></script>
+  <!-- General rule, load everythign of priority at top before list-gen.js  including html loading-->
+  </body>
+</html>

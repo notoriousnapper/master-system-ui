@@ -1,0 +1,28 @@
+body {
+  font-family: 'Lato';
+  /* font-size: 30px; */
+}
+
+li {
+  list-style: none;
+  background-color: #ebece2;
+  color: #1c2f21;
+  /* margin:  */
+  padding: 10px 10px;
+  margin-bottom: 4px;
+}
+#myChart {
+  width: 100px;
+  height: : 100px;
+}
+
+.sexy-list {
+  font-size: 50px;
+}
+.container {
+  font-size: 60px;
+  background-color: #cee3e0;
+}
+#calendar {
+  font-size: 60px;
+}
