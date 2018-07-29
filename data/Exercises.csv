@@ -1,11 +1,12 @@
-﻿Chest,Legs,Arms,1000
-Bench Press,Squats,Tricep Overhead,x
-Side Rows,Hamstring Curls,Incline Bicep Curls,y
-Incline Press,Lunges,Shoulder Side Raises,z
-Shoulders,Toes Raises,Push Ups,
-Biceps,Side Abs,Shoulder Press,
-Triceps,,,
-Deadlift,,,
-Fore-Arms,,,
-Shrugs,,,
-Extra,,,
+﻿Chest/Back,Arms,Legs,1000,Rest,Run
+Bench Press,Push Ups/ Warm-Up,Squats,Mountain Climbers,Do Nothing,"6, 7, 8 Speed 3 miles"
+Side Rows,Tricep Overhead,Hamstring Curls,Jumping Jacks,Chill Bruh,
+Incline Press,Incline Bicep Curls,Lunges,Squats,,
+Shoulders,Shoulder Side Raises,Toes Raises,Lunges,,
+Biceps,Shoulder Press,Side Abs,Pushups,,
+Triceps,Side Rows,,Burpees,,
+Deadlift,,,Crunches,,
+Fore-Arms,,,Situps,,
+,,,Box Jumps,,
+,,,Raised Box Jumps,,
+,,,SwitchBacks,,

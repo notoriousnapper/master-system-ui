@@ -15,7 +15,7 @@ function createConfig(configObject){
 }
 let config = {
     container: {
-        name: "testConfig",
+        name: "Exercise",
         className: "list"
     },
     adapter: {
@@ -81,6 +81,43 @@ function generateListNodeHTML(data, nodeConfig){
         // beginning is set/ padding
     }
     return container;
+}
+
+/* Adapter function for transforming data */
+function adaptListData(option, data) {
+    let fields = [];
+    let adaptedData = {};
+    let firstSet = data[0];
+
+    // Gather fields
+    for (var key in firstSet) {
+        fields.push(key);
+        console.log("key: " + key);
+    }
+
+
+    // Create Template
+    fields.map((field) => {
+        /* let dataObject = {} */
+        ;
+        adaptedData[field] = [];
+    });
+    console.log("whole data: " + JSON.stringify(adaptedData, null, 4));
+    console.log("whole fields: " + fields);
+
+    for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < fields.length; j++) {
+            let targetData = data[i][fields[j]];
+            let targetGroup = adaptedData[fields[j]]
+            targetGroup.push(
+                [targetData] // TODO: Format must be like this --> look at generateListNodeHTML
+            );
+        }
+    }
+    return {
+        data: adaptedData,
+        fields: fields
+    };
 }
 
 
